@@ -7,5 +7,5 @@ const router = express.Router();
 
 // Admin analytics
 router.get("/analytics", authMiddleware, adminMiddleware, getAnalytics);
-
+router.get("/low-stock", authMiddleware, adminMiddleware, getLowStockProducts);
 export default router;

@@ -39,3 +39,7 @@ export const getAnalytics = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+export const getLowStockProducts = async (req, res) => {
+  const products = await Product.find({ stock: { $lt: 10 } });
+  res.json(products);
+};

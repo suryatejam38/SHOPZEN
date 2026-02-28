@@ -13,6 +13,7 @@ import walletRoutes from "./routes/wallet.routes.js";
 import adminRoutes from "./routes/admin.routes.js";
 import cartRoutes from "./routes/cart.routes.js";
 import wishlistRoutes from "./routes/wishlist.routes.js";
+import analyticsRoutes from "./routes/analytics.routes.js";
 
 dotenv.config();
 connectDB();
@@ -29,6 +30,7 @@ app.use("/wallet", walletRoutes);
 app.use("/admin", adminRoutes);
 app.use("/cart", cartRoutes);
 app.use("/wishlist", wishlistRoutes);
+app.use("/analytics", analyticsRoutes);
 
 app.get("/profile", authMiddleware, (req, res) => {
   res.json({
